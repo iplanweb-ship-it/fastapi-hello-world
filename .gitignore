@@ -1,0 +1,7 @@
+.kube
+ignore
+ignore
+venv
+kubectl.exe
+minikube.exe
+kubectl.exe*
