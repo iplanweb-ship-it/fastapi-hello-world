@@ -1,0 +1,82 @@
+# ======================================================================
+# Chart.yaml
+# ======================================================================
+apiVersion: v2
+name: logzio-monitoring
+description: "Helm chart values and metadata generated from your helm install command"
+type: application
+version: 1.0.0
+appVersion: "1.0"
+
+---
+# ======================================================================
+# values.yaml
+# ======================================================================
+
+global:
+  logzioRegion: "us"
+  env_id: "iplanweb"
+  logzioLogsToken: "<API TOKEN>"
+  logzioMetricsToken: "<METRICS TOKEN>"
+  logzioTracesToken: "<TRACES TOKEN>"
+  logzioSpmToken: "<METRICS TOKEN>"
+
+logs:
+  enabled: true
+
+logzio-k8s-telemetry:
+  metrics:
+    enabled: true
+  k8sObjectsConfig:
+    enabled: true
+
+logzio-apm-collector:
+  enabled: true
+  spm:
+    enabled: true
+  serviceGraph:
+    enabled: true
+
+securityReport:
+  enabled: true
+
+deployEvents:
+  enabled: true
+
+---
+# ======================================================================
+# templates/NOTES.txt
+# ======================================================================
+# These are post-install notes that Helm shows after deployment.
+
+Thank you for using the logzio-monitoring chart.
+
+To check deployment status:
+  kubectl -n monitoring get all
+
+To view logs:
+  kubectl -n monitoring logs -l app=logzio-monitoring
+
+---
+# ======================================================================
+# README (for reference)
+# ======================================================================
+# Usage:
+# 1. Add the Logz.io Helm repository:
+#      helm repo add logzio-helm https://charts.logz.io
+#      helm repo update
+#
+# 2. Install the chart with this file:
+#      helm install -n monitoring --create-namespace -f values.yaml logzio-monitoring logzio-helm/logzio-monitoring
+#
+# Or if you saved this YAML as logzio-monitoring-all.yaml:
+#      helm install -n monitoring --create-namespace -f logzio-monitoring-all.yaml logzio-monitoring logzio-helm/logzio-monitoring
+#
+# Security Note:
+# Do NOT check this file into public repos with real tokens.
+# Instead, create Kubernetes secrets and reference them.
+#
+# Example:
+#  kubectl -n monitoring create secret generic logzio-tokens #    --from-literal=logsToken='REPLACE' #    --from-literal=metricsToken='REPLACE' #    --from-literal=tracesToken='REPLACE' #    --from-literal=spmToken='REPLACE'
+#
+# Then update your values.yaml to use those secret references.
