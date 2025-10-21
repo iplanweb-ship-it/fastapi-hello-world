@@ -59,9 +59,7 @@
 
 ## 📁 Deliverables
 
-✅ Dockerfile  
-✅ K8s manifests  
-✅ Helm values  
+✅ Dockerfile    
 ✅ Alert creation + API update script  
 ✅ Dashboard screenshots (`/docs/`)  
 ✅ Detailed README with troubleshooting + rationale  
