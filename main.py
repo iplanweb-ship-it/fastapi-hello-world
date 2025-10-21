@@ -14,7 +14,7 @@ from opentelemetry.instrumentation.logging import LoggingInstrumentor
 
 # --- Configure OpenTelemetry ---
 LOGZIO_OTLP_ENDPOINT = os.getenv("LOGZIO_OTLP_ENDPOINT", "https://api.logz.io:443") 
-LOGZIO_OTLP_TOKEN = os.getenv("LOGZIO_OTLP_TOKEN", "IratvtBBWjGuyxxRYoHliFMSOCJjCNuy")
+LOGZIO_OTLP_TOKEN = os.getenv("LOGZIO_OTLP_TOKEN", "<TOKEN>")
 
 resource = Resource(attributes={"service.name": "fastapi-hello-world"})
 provider = TracerProvider(resource=resource)
