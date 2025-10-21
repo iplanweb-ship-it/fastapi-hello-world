@@ -1,8 +1,8 @@
 # Your API token
-$ApiToken = "d14b6eca-c836-4f51-b32a-7d455d7cd9bc"
+$ApiToken = "<TOKEN>"
 
 # Alert ID
-$AlertId = "22601803"
+$AlertId = "<ALERTID>"
 
 # API endpoint (adjust region if needed)
 $Url = "https://api.logz.io/v1/alerts/$AlertId"
@@ -14,8 +14,8 @@ $Headers = @{
 }
 
 # ===== CONFIGURATION =====
-$token = "d14b6eca-c836-4f51-b32a-7d455d7cd9bc"
-$alertId = "22601803"
+$token = "<TOKEN>"
+$alertId = "<ALERTID>"
 $baseUrl = "https://api.logz.io/v1"
 $newThreshold = 50   # <-- change threshold here
 
