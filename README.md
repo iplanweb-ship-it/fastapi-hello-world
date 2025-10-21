@@ -291,7 +291,7 @@ Write-Host "✅ Alert updated successfully!"
 ## 📚 12. References
 
 - [Logz.io Docs](https://docs.logz.io/)
-- [OpenTelemetry Collector Helm Chart]([https://github.com/logzio/public-helm-charts](https://docs.logz.io/docs/k8s-360/unified-helm-chart/))
+- [OpenTelemetry Collector Helm Chart](https://github.com/logzio/public-helm-charts](https://docs.logz.io/docs/k8s-360/unified-helm-chart/)
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
 - [Kubernetes Basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
 - [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
