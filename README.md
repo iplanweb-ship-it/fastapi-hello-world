@@ -202,8 +202,8 @@ Repeat multiple times to trigger your alert condition (>5 logs with `"SC"` in 5 
 
 PowerShell script:
 ```powershell
-$token = "d14b6eca-c836-4f51-b32a-7d455d7cd9bc"
-$alertId = "22601803"
+$token = "<TOKEN>"
+$alertId = "<ALERTID>"
 $baseUrl = "https://api.logz.io/v1"
 
 $headers = @{
@@ -276,14 +276,13 @@ Write-Host "✅ Alert updated successfully!"
 ├── requirements.txt
 ├── Dockerfile
 ├── deployment.yaml
-├── helm-values.yaml
 ├── alert-update.ps1
 ├── /docs
 │   ├── logs-validation.png
 │   ├── alert-definition.png
 │   ├── alert-triggered.png
-│   ├── dashboard-log-count.png
-│   └── dashboard-pod-status.png
+│   ├── dashboard.png
+│  
 └── README.md
 ```
 
