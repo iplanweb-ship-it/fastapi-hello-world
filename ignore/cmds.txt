@@ -1,0 +1,59 @@
+Commands
+wiseg94194@memeazon.com
+
+cd\
+cd de
+cd 	
+
+docker build -t fastapi-hello-world . 
+docker run -d -p 8000:8000 fastapi-hello-world
+
+docker ps
+
+docker stop <container_id_or_name>
+docker rm <container_id_or_name>
+
+
+-d → runs in background
+-p 8000:8000 → maps container port 8000 → host port 8000
+
+
+docker run -d -p 8000:8000 `
+  -e LOGZIO_OTLP_TOKEN=e0f97eb8-bec6-4e4d-b88a-107a1a5a8465 `
+  -e LOGZIO_OTLP_ENDPOINT=https://api.logz.io:443 `
+  fastapi-hello-world
+
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; New-Item -Path $env:APPDATA\LogzioAgent -ItemType Directory -Force | Out-Null; [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri 'https://github.com/logzio/logzio-agent-manifest/releases/latest/download/agent_windows.zip' -OutFile ( New-Item -Path $env:TEMP\Logzio\agent_windows.zip -Force ); Expand-Archive -LiteralPath $env:TEMP\Logzio\agent_windows.zip -DestinationPath $env:TEMP\Logzio; powershell $env:TEMP\Logzio\agent.ps1 --url=https://app.logz.io --id=e0f97eb8-bec6-4e4d-b88a-107a1a5a8465
+
+
+
+docker build -t fastapi-hello-world .
+docker run -d -p 8000:8000 `
+  -e LOGZIO_OTLP_TOKEN=<YOUR_LOGZIO_TOKEN> `
+  -e LOGZIO_OTLP_ENDPOINT=https://api.logz.io:443 `
+  fastapi-hello-world
+
+
+#kube install
+Invoke-WebRequest -OutFile minikube.exe -Uri https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe
+Move-Item .\minikube.exe "C:\Program Files\minikube\minikube.exe"
+setx PATH "$($env:PATH);C:\Program Files\minikube"
+minikube version
+minikube start --driver=docker
+kubectl get nodes
+minikube dashboard
+
+
+kubectl logs fastapi-hello-world-5487679d4b-m2hlg
+
+iplanweb
+
+docker tag fastapi-hello-world:latest iplanweb/fastapi-hello-world:v1
+
+
+minikube delete --all && \
+minikube config set driver docker && \
+minikube start --driver=docker && \
+minikube status && \
+kubectl get nodes
